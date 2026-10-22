@@ -31,6 +31,7 @@ export interface LocaleMessages {
     news: string;
     selectedPublications: string;
     viewAll: string;
+    acceptanceRate: string;
   };
   publications: {
     searchPlaceholder: string;
@@ -81,6 +82,7 @@ const en: LocaleMessages = {
     news: 'News',
     selectedPublications: 'Selected Publications',
     viewAll: 'View All',
+    acceptanceRate: 'Acceptance rate',
   },
   publications: {
     searchPlaceholder: 'Search publications...',
@@ -131,6 +133,7 @@ const zh: LocaleMessages = {
     news: '动态',
     selectedPublications: '精选论文',
     viewAll: '查看全部',
+    acceptanceRate: '录用率',
   },
   publications: {
     searchPlaceholder: '搜索论文...',
