@@ -57,14 +57,18 @@ export default function SelectedPublications({ publications, title, enableOnePag
                                 </span>
                             ))}
                         </p>
-                        <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-2">
+                        <p className={`text-sm text-neutral-600 dark:text-neutral-500 ${pub.acceptanceRate ? 'mb-1' : 'mb-2'}`}>
                             {pub.journal || pub.conference}
-                            {pub.acceptanceRate && (
-                                <span className="ml-2 inline-block rounded bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
-                                    {messages.home.acceptanceRate}: {pub.acceptanceRate}
-                                </span>
-                            )}
                         </p>
+                        {pub.acceptanceRate && (
+                            <p className="mb-2">
+                                <span className="inline-block rounded bg-accent/10 px-2 py-0.5 text-xs text-accent">
+                                    {messages.home.acceptanceRate}:{' '}
+                                    <span className="font-bold">{pub.acceptanceRate.split(' ')[0]}</span>
+                                    {pub.acceptanceRate.includes(' ') && ` ${pub.acceptanceRate.slice(pub.acceptanceRate.indexOf(' ') + 1)}`}
+                                </span>
+                            </p>
+                        )}
                         {pub.description && (
                             <p className="text-sm text-neutral-500 dark:text-neutral-500 line-clamp-2">
                                 {pub.description}
